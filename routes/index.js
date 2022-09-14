@@ -10,8 +10,8 @@ const pageNotFound = require('../utils/errorMessage');
 router.post('/signin', authValidation, login);
 router.post('/signup', regValidation, createUser);
 
-router.use('/', auth, userRouter);
-router.use('/', auth, movieRouter);
+router.use('/users', auth, userRouter);
+router.use('/movies', auth, movieRouter);
 router.use('/', (req, res, next) => {
   next(new NotFoundError(pageNotFound));
 });
