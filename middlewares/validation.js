@@ -42,7 +42,7 @@ const movieValidation = celebrate({
     country: Joi.string().required(),
     director: Joi.string().required(),
     duration: Joi.number().required(),
-    year: Joi.number().required().length(4),
+    year: Joi.number().required(),
     description: Joi.string().required(),
     image: Joi.string().custom(validateUrl),
     trailerLink: Joi.string().custom(validateUrl),
