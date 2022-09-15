@@ -12,7 +12,7 @@ router.post('/signup', regValidation, createUser);
 
 router.use('/users', auth, userRouter);
 router.use('/movies', auth, movieRouter);
-router.use('/', (req, res, next) => {
+router.use('/', auth, (req, res, next) => {
   next(new NotFoundError(pageNotFound));
 });
 module.exports = router;
