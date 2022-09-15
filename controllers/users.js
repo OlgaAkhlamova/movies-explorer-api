@@ -80,6 +80,8 @@ module.exports.patchUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError(validationError));
+      } if (err.code === 11000) {
+        next(new ConflictError(existUserAlready));
       } else {
         next(err);
       }
