@@ -1,0 +1,16 @@
+module.exports.validationError = 'Ошибка валидации';
+module.exports.filmNotFound = 'Фильм не найден';
+module.exports.cannotDelete = 'Удаление чужого фильма невозможно';
+module.exports.deletedMovie = 'Фильм успешно удален';
+module.exports.notFoundUser = 'Пользователь не найден';
+module.exports.existUserAlready = 'Пользователь с таким email уже зарегистрирован';
+module.exports.neededAutorisation = 'Необходима авторизация';
+module.exports.serverError = 'Ошибка сервера';
+module.exports.pageNotFound = 'Страница не найдена';
+module.exports.emailError = 'Почта указана неверно';
+module.exports.fillField = 'Это поле должно быть заполнено';
+module.exports.lengthFieldMin = 'Минимальная длина поля - 2 знака';
+module.exports.lengthFieldMax = 'Максимальная длина поля - 30 знака';
+module.exports.unauthError = 'Неправильные почта или пароль';
+module.exports.urlError = 'Ссылка указана неверно';
+module.exports.manyRequest = 'Превышен лимит запросов';
