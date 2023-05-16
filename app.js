@@ -1,20 +1,22 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const { CORS } = require('./middlewares/CORS');
+
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 const mainErrorHandler = require('./middlewares/mainErrorHandler');
 const apiRequestLimiter = require('./middlewares/apiRequestLimiter');
 
-const { PORT = 3000, DB_ADRESS = 'mongodb://localhost:27017/bitfilmsdb' } = process.env;
+const { PORT = 3700, DB_ADRESS = 'mongodb://localhost:27017/bitfilmsdb' } = process.env;
 const app = express();
 
 app.use(requestLogger); // подключаем логгер запросов
 app.use(apiRequestLimiter); // Use the limit rule as an application middleware
-app.use(cors());
+app.use(CORS);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
+    "dev": "cross-env PORT=9876 nodemon app.js",
     "lint": "npx eslint ."
   },
   "repository": {
@@ -37,6 +37,7 @@
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "cross-env": "^7.0.3"
   }
 }
