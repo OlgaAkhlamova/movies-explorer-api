@@ -16,7 +16,8 @@ const app = express();
 
 app.use(requestLogger); // подключаем логгер запросов
 app.use(apiRequestLimiter); // Use the limit rule as an application middleware
-app.use(CORS);
+// app.use(cors(corsOptions));
+app.use(CORS());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
