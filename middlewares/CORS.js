@@ -23,4 +23,4 @@ const CORS = (req, res, next) => {
   next();
 };
 
-module.exports = CORS();
+module.exports = { CORS };

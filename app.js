@@ -4,8 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const helmet = require('helmet');
 const { CORS } = require('./middlewares/CORS');
-
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 const mainErrorHandler = require('./middlewares/mainErrorHandler');
@@ -15,9 +15,9 @@ const { PORT = 3700, DB_ADRESS = 'mongodb://localhost:27017/bitfilmsdb' } = proc
 const app = express();
 
 app.use(requestLogger); // подключаем логгер запросов
-app.use(apiRequestLimiter); // Use the limit rule as an application middleware
-// app.use(cors(corsOptions));
-app.use(CORS());
+app.use(apiRequestLimiter); // устанавливаем ограничение на запросы
+app.use(helmet());
+app.use(CORS);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
